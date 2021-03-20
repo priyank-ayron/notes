@@ -1,6 +1,13 @@
 import React from "react";
 
-function Sidebar({ notes, onAddNote, onDeleteNote }) {
+function Sidebar({
+  notes,
+  onAddNote,
+  onDeleteNote,
+  activeNote,
+  setActiveNote,
+}) {
+  const sortedNotes = notes.sort((a, b) => b.lastModified - a.lastModified);
   return (
     <div className="app-sidebar">
       <div class="app-sidebar-header">
@@ -8,11 +15,14 @@ function Sidebar({ notes, onAddNote, onDeleteNote }) {
         <button onClick={onAddNote}>Add</button>
       </div>
       <div class="app-sidebar-notes">
-        {notes.map((note) => (
-          <div class="app-sidebar-note">
+        {sortedNotes.map((note) => (
+          <div
+            class={`app-sidebar-note ${note.key === activeNote && "active"}`}
+            onClick={() => setActiveNote(note.key)}
+          >
             <div class="sidebar-note-title">
               <strong>{note.title}</strong>
-              <button onClick={() => onDeleteNote(note.key)}>Delete</button>
+              <button onClick={(e) => onDeleteNote(note.key)}>Delete</button>
             </div>
             <p>{note.body && note.body.substr(0, 100) + "..."}</p>
             <small className="note-meta">

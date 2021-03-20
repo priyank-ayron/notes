@@ -41,12 +41,15 @@ button:hover {
   width: 30%;
   height: 100vh;
   border-right: 1px solid #ddd;
+  background-color: #e9cbb0;
 }
 
 .app-sidebar-header {
   display: flex;
   justify-content: space-between;
   padding: 25px;
+  background-color: #614a34;
+  color: white;
 }
 .app-sidebar-header h1 {
   margin: 0;
@@ -89,6 +92,10 @@ button:hover {
 .app-main {
   width: 70%;
   height: 100vh;
+  background-color: #f1dcca;
+}
+.app-main-note {
+  background-color: #f8ede4;
 }
 .app-main-note-edit,
 .app-main-note-preview {

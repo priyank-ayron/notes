@@ -15,6 +15,7 @@ const Main = ({ activeNote, onUpdateNote }) => {
     <div className="app-main">
       <div className="app-main-note-edit">
         <input
+          className="app-main-note"
           type="text"
           id="title"
           placeholder="Note Title"
@@ -23,6 +24,7 @@ const Main = ({ activeNote, onUpdateNote }) => {
           autoFocus
         />
         <textarea
+          className="app-main-note"
           id="body"
           placeholder="Write your note here..."
           value={activeNote.body}

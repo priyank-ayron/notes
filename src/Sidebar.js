@@ -32,6 +32,7 @@ function Sidebar({
                 minute: "2-digit",
               })}
             </small>
+            <hr></hr>
           </div>
         ))}
       </div>
